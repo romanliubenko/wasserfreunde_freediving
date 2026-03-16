@@ -481,7 +481,7 @@ h3 {
 main::after {
   content: '';
   display: block;
-  height: 30vh;
+  height: 20vh;
 }
 
 /* ─── CARDS ─── */
@@ -1001,5 +1001,74 @@ body.lang-en-active .lang-de {
 
   .masonry-grid {
     column-count: 3;
+  }
+}
+
+/* ─── ACTIVITIES ─── */
+.activities-groups {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.activities-group-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-text-muted);
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.activities-group-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.activities-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.activities-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  padding: 0.55rem 0;
+  font-size: 0.975rem;
+  color: var(--color-text);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.07);
+}
+
+.activities-item:last-child {
+  border-bottom: none;
+}
+
+.activities-item::before {
+  content: '';
+  flex-shrink: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0.75;
+  position: relative;
+  top: -0.1em;
+}
+
+@media (min-width: 640px) {
+  .activities-groups {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .activities-groups {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
