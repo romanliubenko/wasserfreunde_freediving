@@ -179,6 +179,12 @@ h3 {
   font-size: 0.95rem;
 }
 
+.logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .logo-text {
   display: flex;
   flex-direction: column;
@@ -311,12 +317,13 @@ h3 {
   transform: translateY(-3.4px) rotate(-45deg);
 }
 
+/* ─── HERO ─── */
 .hero {
   position: relative;
   min-height: calc(100vh - var(--nav-height));
   display: flex;
   align-items: center;
-  padding: 3.5rem 0 4.5rem;
+  padding: 3rem 0 3.5rem;
   overflow: hidden;
 }
 
@@ -327,12 +334,6 @@ h3 {
   background-size: cover;
   background-position: center 10%;
   z-index: -2;
-}
-
-.logo-mark img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 
 .hero-media-layer {
@@ -393,6 +394,7 @@ h3 {
   margin-top: 1.6rem;
 }
 
+/* ─── BUTTONS ─── */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -438,13 +440,16 @@ h3 {
   width: 100%;
 }
 
+/* ─── SECTIONS ─────────────────────────────────────────────────────────────
+   Key changes vs original:
+   • padding reduced from 4rem/4.5rem → 3rem/3.25rem
+   • min-height: 100vh removed (was the main cause of big gaps)
+   • display reverted to block (flex + align-items: center added vertical centering that forced full-height)
+   ─────────────────────────────────────────────────────────────────────── */
 .section {
-  padding: 4rem 0 4.5rem;
+  padding: 3rem 0 3.25rem;
   position: relative;
   scroll-margin-top: calc(var(--nav-height) + 12px);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
 }
 
 .section::before {
@@ -462,7 +467,7 @@ h3 {
 }
 
 .section-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .section-header h2 {
@@ -475,6 +480,7 @@ h3 {
   position: relative;
 }
 
+/* ─── CARDS ─── */
 .card-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -530,6 +536,7 @@ h3 {
   font-size: 1rem;
 }
 
+/* ─── TRAINING ─── */
 .training-layout {
   gap: 1.75rem;
 }
@@ -591,23 +598,14 @@ h3 {
   color: var(--color-text-muted);
 }
 
+/* ─── GALLERY ─── */
 .masonry-grid {
-  /*display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.9rem;*/
   column-count: 1;
   column-gap: 0.9rem;
   width: 100%;
 }
 
 .masonry-item {
-  /*position: relative;
-  margin: 0 0 0.9rem;
-  overflow: hidden;
-  border-radius: 18px;
-  border: 1px solid rgba(148, 163, 184, 0.45);
-  background: rgba(15, 23, 42, 0.95);
-  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.95);*/
   display: inline-block;
   width: 100%;
   margin: 0 0 0.9rem;
@@ -644,6 +642,7 @@ h3 {
   opacity: 0.55;
 }
 
+/* ─── VIDEOS ─── */
 .video-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -676,6 +675,7 @@ h3 {
   border: none;
 }
 
+/* ─── CONTACT ─── */
 .contact-layout {
   display: grid;
   gap: 2rem;
@@ -690,6 +690,7 @@ h3 {
   color: var(--color-accent-strong);
 }
 
+/* ─── DOWNLOADS ─── */
 .downloads .card-grid {
   margin-top: 1.5rem;
 }
@@ -711,6 +712,7 @@ h3 {
   border: 1px solid rgba(148, 163, 184, 0.6);
 }
 
+/* ─── HAUPTVEREIN ─── */
 .other-sports {
   text-align: left;
 }
@@ -719,8 +721,9 @@ h3 {
   margin-top: 1.3rem;
 }
 
+/* ─── IMPRESSUM ─── */
 .impressum {
-  padding-bottom: 5rem;
+  padding-bottom: 3.5rem;
 }
 
 .impressum-grid {
@@ -787,6 +790,7 @@ h3 {
   color: var(--color-text-muted);
 }
 
+/* ─── FOOTER ─── */
 .site-footer {
   border-top: 1px solid rgba(15, 23, 42, 0.85);
   background: radial-gradient(circle at 10% 0, rgba(56, 189, 248, 0.12), transparent 60%),
@@ -821,6 +825,7 @@ h3 {
   color: var(--color-accent-strong);
 }
 
+/* ─── LANGUAGE ─── */
 .lang-de,
 .lang-en {
   display: inline;
@@ -834,6 +839,7 @@ body.lang-en-active .lang-de {
   display: none;
 }
 
+/* ─── REVEAL ANIMATION ─── */
 .reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -845,6 +851,7 @@ body.lang-en-active .lang-de {
   transform: translateY(0);
 }
 
+/* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
   .header-inner {
     gap: 0.6rem;
@@ -879,8 +886,13 @@ body.lang-en-active .lang-de {
     pointer-events: auto;
   }
 
+  .section {
+    padding: 2.25rem 0 2.5rem;
+  }
+
   .hero {
-    padding-top: 2.75rem;
+    padding-top: 2.25rem;
+    padding-bottom: 2.75rem;
   }
 
   .hero-content {
@@ -912,10 +924,6 @@ body.lang-en-active .lang-de {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  /*.masonry-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }*/
-
   .video-grid {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -942,12 +950,12 @@ body.lang-en-active .lang-de {
   .masonry-grid {
     column-count: 2;
   }
-  
 }
 
 @media (min-width: 768px) {
   .hero {
-    padding-top: 4.25rem;
+    padding-top: 3.5rem;
+    padding-bottom: 4rem;
   }
 
   .hero-text {
@@ -962,10 +970,6 @@ body.lang-en-active .lang-de {
     grid-template-columns: 1.2fr 1fr;
     align-items: flex-start;
   }
-
-  /*.masonry-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }*/
 
   .video-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -987,12 +991,11 @@ body.lang-en-active .lang-de {
   }
 
   .hero {
-    padding-top: 5rem;
-    padding-bottom: 5.5rem;
+    padding-top: 4rem;
+    padding-bottom: 4.5rem;
   }
 
   .masonry-grid {
     column-count: 3;
   }
 }
-
