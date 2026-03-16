@@ -440,25 +440,22 @@ h3 {
   width: 100%;
 }
 
-/* ─── SECTIONS ─────────────────────────────────────────────────────────────
-   Key changes vs original:
-   • padding reduced from 4rem/4.5rem → 3rem/3.25rem
-   • min-height: 100vh removed (was the main cause of big gaps)
-   • display reverted to block (flex + align-items: center added vertical centering that forced full-height)
-   ─────────────────────────────────────────────────────────────────────── */
+/* ─── SECTIONS ─── */
 .section {
   padding: 3rem 0 3.25rem;
   position: relative;
   scroll-margin-top: calc(var(--nav-height) + 12px);
 }
 
+/* Separator line — lighter than the dark background so it reads as a divider */
 .section::before {
   content: '';
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-  border-top: 1px solid rgba(15, 23, 42, 0.7);
-  opacity: 0.8;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: rgba(148, 163, 184, 0.18);
 }
 
 .section-inner {
@@ -478,6 +475,13 @@ h3 {
 
 .section-intro {
   position: relative;
+}
+
+/* ─── SPACER after last section so it can scroll fully into view ─── */
+main::after {
+  content: '';
+  display: block;
+  height: 30vh;
 }
 
 /* ─── CARDS ─── */
@@ -792,7 +796,7 @@ h3 {
 
 /* ─── FOOTER ─── */
 .site-footer {
-  border-top: 1px solid rgba(15, 23, 42, 0.85);
+  border-top: 1px solid rgba(148, 163, 184, 0.18);
   background: radial-gradient(circle at 10% 0, rgba(56, 189, 248, 0.12), transparent 60%),
     rgba(2, 6, 23, 0.96);
 }
