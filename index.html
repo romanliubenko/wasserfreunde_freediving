@@ -350,106 +350,79 @@
               </span>
             </p>
           </header>
-          <div class="masonry-grid">
-            <figure class="masonry-item">
-              <img
-                src="assets/gallery/gallery_photo_01.jpg"
-                loading="lazy"
-              />
-            </figure>
-            <figure class="masonry-item">
-              <img
-                src="assets/gallery/gallery_photo_02.jpg"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure class="masonry-item">
-              <img
-                src="assets/gallery/gallery_photo_03.jpg"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure class="masonry-item">
-              <img
-                src="assets/gallery/gallery_photo_04.jpg"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure class="masonry-item">
-              <img
-                src="assets/gallery/gallery_photo_05.jpg"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure class="masonry-item">
-              <img
-                src="assets/gallery/gallery_photo_06.jpg"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure class="masonry-item">
-              <img
-                src="assets/gallery/gallery_photo_07.jpg"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure class="masonry-item">
-              <img
-                src="assets/gallery/gallery_photo_08.jpg"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure class="masonry-item">
-              <img
-                src="assets/gallery/gallery_photo_09.jpg"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure class="masonry-item">
-              <img
-                src="assets/gallery/gallery_photo_10.jpg"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure class="masonry-item">
-              <img
-                src="assets/gallery/gallery_photo_11.jpg"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure class="masonry-item">
-              <img
-                src="assets/gallery/gallery_photo_12.jpg"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure class="masonry-item">
-              <img
-                src="assets/gallery/gallery_photo_13.jpg"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <figure class="masonry-item">
-              <img
-                src="assets/gallery/gallery_photo_14.jpg"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
+
+          <!-- Mobile: single-photo slider -->
+          <div class="gallery-scroll-wrap">
+            <div class="gallery-slider">
+              <div class="gallery-slider-track">
+                <div class="gallery-slider-inner" id="gallery-slider-inner">
+                  <figure class="masonry-item"><img src="assets/gallery/gallery_photo_01.jpg" loading="lazy" /></figure>
+                  <figure class="masonry-item"><img src="assets/gallery/gallery_photo_02.jpg" loading="lazy" decoding="async" /></figure>
+                  <figure class="masonry-item"><img src="assets/gallery/gallery_photo_03.jpg" loading="lazy" decoding="async" /></figure>
+                  <figure class="masonry-item"><img src="assets/gallery/gallery_photo_04.jpg" loading="lazy" decoding="async" /></figure>
+                  <figure class="masonry-item"><img src="assets/gallery/gallery_photo_05.jpg" loading="lazy" decoding="async" /></figure>
+                  <figure class="masonry-item"><img src="assets/gallery/gallery_photo_06.jpg" loading="lazy" decoding="async" /></figure>
+                  <figure class="masonry-item"><img src="assets/gallery/gallery_photo_07.jpg" loading="lazy" decoding="async" /></figure>
+                  <figure class="masonry-item"><img src="assets/gallery/gallery_photo_08.jpg" loading="lazy" decoding="async" /></figure>
+                  <figure class="masonry-item"><img src="assets/gallery/gallery_photo_09.jpg" loading="lazy" decoding="async" /></figure>
+                  <figure class="masonry-item"><img src="assets/gallery/gallery_photo_10.jpg" loading="lazy" decoding="async" /></figure>
+                  <figure class="masonry-item"><img src="assets/gallery/gallery_photo_11.jpg" loading="lazy" decoding="async" /></figure>
+                  <figure class="masonry-item"><img src="assets/gallery/gallery_photo_12.jpg" loading="lazy" decoding="async" /></figure>
+                  <figure class="masonry-item"><img src="assets/gallery/gallery_photo_13.jpg" loading="lazy" decoding="async" /></figure>
+                  <figure class="masonry-item"><img src="assets/gallery/gallery_photo_14.jpg" loading="lazy" decoding="async" /></figure>
+                </div>
+              </div>
+              <button class="gallery-arrow gallery-arrow-prev" id="gallery-prev" aria-label="Previous photo" hidden>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="gallery-arrow gallery-arrow-next" id="gallery-next" aria-label="Next photo">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <div class="gallery-dots" id="gallery-dots"></div>
           </div>
+
+          <!-- Desktop: collapsible masonry -->
+          <div class="masonry-grid is-collapsed" id="gallery-masonry" aria-expanded="false">
+            <figure class="masonry-item"><img src="assets/gallery/gallery_photo_01.jpg" loading="lazy" /></figure>
+            <figure class="masonry-item"><img src="assets/gallery/gallery_photo_02.jpg" loading="lazy" decoding="async" /></figure>
+            <figure class="masonry-item"><img src="assets/gallery/gallery_photo_03.jpg" loading="lazy" decoding="async" /></figure>
+            <figure class="masonry-item"><img src="assets/gallery/gallery_photo_04.jpg" loading="lazy" decoding="async" /></figure>
+            <figure class="masonry-item"><img src="assets/gallery/gallery_photo_05.jpg" loading="lazy" decoding="async" /></figure>
+            <figure class="masonry-item"><img src="assets/gallery/gallery_photo_06.jpg" loading="lazy" decoding="async" /></figure>
+            <figure class="masonry-item"><img src="assets/gallery/gallery_photo_07.jpg" loading="lazy" decoding="async" /></figure>
+            <figure class="masonry-item"><img src="assets/gallery/gallery_photo_08.jpg" loading="lazy" decoding="async" /></figure>
+            <figure class="masonry-item"><img src="assets/gallery/gallery_photo_09.jpg" loading="lazy" decoding="async" /></figure>
+            <figure class="masonry-item"><img src="assets/gallery/gallery_photo_10.jpg" loading="lazy" decoding="async" /></figure>
+            <figure class="masonry-item"><img src="assets/gallery/gallery_photo_11.jpg" loading="lazy" decoding="async" /></figure>
+            <figure class="masonry-item"><img src="assets/gallery/gallery_photo_12.jpg" loading="lazy" decoding="async" /></figure>
+            <figure class="masonry-item"><img src="assets/gallery/gallery_photo_13.jpg" loading="lazy" decoding="async" /></figure>
+            <figure class="masonry-item"><img src="assets/gallery/gallery_photo_14.jpg" loading="lazy" decoding="async" /></figure>
+          </div>
+
+          <button class="gallery-toggle" id="gallery-toggle" aria-controls="gallery-masonry">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="gallery-toggle-label">
+              <span class="lang-de">Alle Fotos anzeigen</span>
+              <span class="lang-en">Show all photos</span>
+            </span>
+          </button>
+
         </div>
+
+        <!-- Sticky collapse button — lives inside the section so it stops at section bottom -->
+        <button class="gallery-toggle-fixed" id="gallery-toggle-fixed" aria-controls="gallery-masonry">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform:rotate(180deg)">
+            <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="gallery-toggle-label">
+            <span class="lang-de">Weniger anzeigen</span>
+            <span class="lang-en">Show less</span>
+          </span>
+        </button>
+
       </section>
 
       <!-- VIDEOS -->
@@ -482,10 +455,6 @@
                 allowfullscreen>
               </iframe>
               </div>
-              <!--<h3>
-                <span class="lang-de">Wasserfreunde Spandau 04 Tauchen</span>
-                <span class="lang-en">Wasserfreunde Spandau 04 Diving</span>
-              </h3>-->
             </article>
             <article class="video-card">
               <div class="video-wrapper">
@@ -497,10 +466,6 @@
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                 </iframe>
               </div>
-              <!--<h3>
-                <span class="lang-de">Wasserfreunde Spandau 04 Tauchen</span>
-                <span class="lang-en">Wasserfreunde Spandau 04 Diving</span>
-              </h3>-->
             </article>
           </div>
         </div>
@@ -543,7 +508,6 @@
             </h2>
           </header>
           <div class="card-grid">
-            <!-- TODO: Point these links to the real PDF documents -->
             <article class="card download-card">
               <div class="download-icon">⬇️</div>
               <h3>
@@ -709,4 +673,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-
