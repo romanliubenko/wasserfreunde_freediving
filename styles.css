@@ -192,7 +192,7 @@ h3 {
 
 .logo-title {
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .logo-subtitle {
@@ -208,21 +208,28 @@ h3 {
   gap: 1.25rem;
 }
 
+/* ─── NAV LINKS (Chrome-compatible fix) ─── */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 1rem;
-  list-style: none;
+  list-style: none !important;
   padding: 0;
   margin: 0;
 }
 
+.nav-links li {
+  list-style: none;
+}
+
 .nav-links a {
   position: relative;
-  padding: 0.3rem 0.2rem;
+  display: inline-block;
+  padding: 0.3rem 0.2rem 0.5rem;
   font-size: 0.9rem;
   color: var(--color-text-muted);
   transition: color 160ms ease, transform 160ms ease;
+  overflow: visible;
 }
 
 .nav-links a::after {
@@ -230,12 +237,14 @@ h3 {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -0.2rem;
+  bottom: 0;
   height: 2px;
+  border-radius: 1px;
   background: linear-gradient(to right, #22d3ee, #14b8a6);
   transform: scaleX(0);
-  transform-origin: center;
+  transform-origin: center center;
   transition: transform 160ms ease;
+  display: block;
 }
 
 .nav-links a:hover {
@@ -447,7 +456,6 @@ h3 {
   scroll-margin-top: calc(var(--nav-height) + 12px);
 }
 
-/* Separator line — lighter than the dark background so it reads as a divider */
 .section::before {
   content: '';
   position: absolute;
@@ -649,16 +657,14 @@ main::after {
   border: 1px solid rgba(148, 163, 184, 0.45);
   overflow: hidden;
   line-height: 0;
-  /* sized by JS to match the image's fitted dimensions */
 }
 
 .gallery-slider-inner .masonry-item img {
   display: block;
   pointer-events: none;
-  /* width/height set explicitly by JS */
 }
 
-/* arrow buttons — always outside the square frame */
+/* arrow buttons */
 .gallery-arrow {
   position: absolute;
   top: 50%;
@@ -788,7 +794,7 @@ main::after {
     rgba(15, 23, 42, 0.98);
 }
 
-/* Sticky collapse button — inside gallery section, stops at section bottom */
+/* Sticky collapse button */
 .gallery-toggle-fixed {
   display: none;
   position: sticky;
@@ -808,9 +814,7 @@ main::after {
   cursor: pointer;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
   transition: border-color 160ms ease, color 160ms ease, background 160ms ease;
-  /* margin so it doesn't butt right against the masonry grid */
   margin-top: 1rem;
-  /* width fits content */
   width: fit-content;
 }
 
