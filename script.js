@@ -313,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!gallerySection) return;
       const rect = gallerySection.getBoundingClientRect();
       const vh = window.innerHeight;
-      gallerySectionVisible = rect.top < vh && rect.bottom > 0;
+      gallerySectionVisible = rect.top < 200 && rect.bottom > 0;
       updateFixedButton();
     }
 
