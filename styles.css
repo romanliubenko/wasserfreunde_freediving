@@ -766,7 +766,20 @@ main::after {
   opacity: 0.55;
 }
 
-/* Collapsed: hide items beyond the first row via JS-added class */
+/* Collapsed: switch to grid so items lay out horizontally (one per column) */
+.masonry-grid.is-collapsed {
+  display: grid;
+  grid-template-columns: repeat(var(--gallery-cols, 1), minmax(0, 1fr));
+  column-gap: 0.9rem;
+  column-count: unset;
+}
+
+.masonry-grid.is-collapsed .masonry-item {
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+}
+
 .masonry-grid.is-collapsed .masonry-item.gallery-hidden {
   display: none;
 }
