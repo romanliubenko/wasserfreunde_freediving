@@ -572,10 +572,42 @@ main::after {
   text-decoration: none;
   color: inherit;
   display: block;
+  border-radius: var(--radius-lg);
+  transition: transform 160ms ease;
 }
 
-.training-link:hover {
+.training-link:hover,
+.training-link:focus-visible {
   transform: translateY(-2px);
+}
+
+.training-link:hover .training-card,
+.training-link:focus-visible .training-card {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent), 0 14px 35px rgba(15, 23, 42, 0.9);
+}
+
+.training-link:focus-visible {
+  outline: none;
+}
+
+/* Maps label at the bottom of each training card */
+.training-maps-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+  opacity: 0.85;
+  transition: opacity 160ms ease;
+}
+
+.training-link:hover .training-maps-label,
+.training-link:focus-visible .training-maps-label {
+  opacity: 1;
 }
 
 .training-card h3 {
