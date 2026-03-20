@@ -489,7 +489,7 @@ h3 {
 main::after {
   content: '';
   display: block;
-  height: 20vh;
+  height: 40vh;
 }
 
 /* ─── CARDS ─── */
@@ -965,11 +965,6 @@ main::after {
 /* ─── IMPRESSUM ─── */
 .impressum {
   padding-bottom: 3.5rem;
-}
-
-.impressum-grid {
-  display: grid;
-  gap: 2.5rem;
 }
 
 .impressum-main p {
