@@ -802,6 +802,8 @@ main::after {
 .masonry-grid.is-collapsed {
   display: grid;
   grid-template-columns: repeat(var(--gallery-cols, 1), minmax(0, 1fr));
+  grid-auto-rows: auto;
+  align-items: start;
   column-gap: 0.9rem;
   column-count: unset;
 }
@@ -810,6 +812,13 @@ main::after {
   display: block;
   width: 100%;
   margin-bottom: 0;
+  aspect-ratio: 4 / 3;
+}
+
+.masonry-grid.is-collapsed .masonry-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .masonry-grid.is-collapsed .masonry-item.gallery-hidden {
@@ -1338,4 +1347,285 @@ body.lang-en-active .lang-de {
   .activities-groups {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* ─── LARGE SCREENS (1600px – 2559px) ─── */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1440px;
+  }
+
+  .section {
+    padding: 4rem 0 4.5rem;
+  }
+
+  .hero {
+    padding-top: 5rem;
+    padding-bottom: 5.5rem;
+  }
+
+  .hero-text {
+    max-width: 680px;
+    padding: 2.75rem 2.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.8rem, 3vw, 3.4rem);
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .hero-badge {
+    width: clamp(260px, 26vw, 380px);
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .masonry-grid {
+    column-count: 4;
+  }
+
+  .masonry-grid.is-collapsed {
+    display: grid;
+    column-count: unset;
+    grid-auto-rows: auto;
+    align-items: start;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .masonry-grid.is-collapsed .masonry-item {
+    align-self: start;
+    height: auto;
+  }
+
+  .training-card {
+    padding: 1.75rem 1.9rem;
+  }
+
+  .video-card {
+    padding: 1.6rem 1.6rem 1.75rem;
+  }
+}
+
+/* ─── 2000px+: hero no longer needs to fill full viewport height ─── */
+@media (min-width: 2000px) {
+  .hero {
+    min-height: unset;
+    padding-bottom: 30vh;
+  }
+}
+
+/* ─── 4K SCREENS (2560px+) ─── */
+@media (min-width: 2560px) {
+  :root {
+    --nav-height: 88px;
+  }
+
+  .container {
+    max-width: 2000px;
+  }
+
+  .section {
+    padding: 6rem 0 6.5rem;
+  }
+
+  .hero {
+    padding-top: 7rem;
+    padding-bottom: 8rem;
+  }
+
+  .hero-content {
+    gap: 5rem;
+  }
+
+  .hero-text {
+    max-width: 900px;
+    padding: 4rem 3.5rem;
+    border-radius: 36px;
+  }
+
+  .hero-title {
+    font-size: clamp(3.8rem, 3vw, 5rem);
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.35rem;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    margin-top: 2.25rem;
+    gap: 1.25rem;
+  }
+
+  .hero-badge {
+    width: clamp(400px, 22vw, 600px);
+  }
+
+  .btn {
+    padding: 1rem 2.25rem;
+    font-size: 1.05rem;
+  }
+
+  .logo-mark {
+    width: 52px;
+    height: 52px;
+    border-radius: 18px;
+  }
+
+  .logo-title {
+    font-size: 1.15rem;
+  }
+
+  .logo-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .nav-links a {
+    font-size: 1.05rem;
+    padding: 0.4rem 0.3rem 0.65rem;
+  }
+
+  .lang-btn {
+    font-size: 0.9rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+    letter-spacing: 0.18em;
+  }
+
+  .section-intro {
+    font-size: 1.15rem;
+    line-height: 1.75;
+  }
+
+  .card {
+    padding: 2rem 2.25rem;
+    border-radius: 26px;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-grid {
+    gap: 2rem;
+  }
+
+  .activities-item {
+    font-size: 1.15rem;
+    padding: 0.75rem 0;
+  }
+
+  .activities-group-title {
+    font-size: 0.95rem;
+  }
+
+  .training-card {
+    padding: 2.5rem 2.75rem;
+    border-radius: 26px;
+  }
+
+  .training-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .training-card p,
+  .training-card ul {
+    font-size: 1.1rem;
+  }
+
+  .training-note {
+    font-size: 1.05rem;
+    margin-top: 2rem;
+  }
+
+  .masonry-grid {
+    column-count: 5;
+    column-gap: 1.4rem;
+  }
+
+  .masonry-grid.is-collapsed {
+    display: grid;
+    column-count: unset;
+    grid-auto-rows: auto;
+    align-items: start;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .masonry-grid.is-collapsed .masonry-item {
+    align-self: start;
+    height: auto;
+  }
+
+  .masonry-item {
+    margin-bottom: 1.4rem;
+    border-radius: 26px;
+  }
+
+  .gallery-toggle,
+  .gallery-toggle-fixed {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+
+  .video-grid {
+    gap: 2.5rem;
+  }
+
+  .video-card {
+    padding: 2rem 2rem 2.25rem;
+    border-radius: 26px;
+  }
+
+  .contact-email a {
+    font-size: 1.4rem;
+  }
+
+  .download-card {
+    padding: 2rem 2.25rem;
+  }
+
+  .download-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .download-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.2rem;
+  }
+
+  .legal-block {
+    padding: 1.1rem 1.5rem;
+    border-radius: 20px;
+  }
+
+  .legal-block summary {
+    font-size: 1rem;
+  }
+
+  .legal-content {
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .footer-inner {
+    padding: 2rem 2.5rem 2.25rem;
+  }
+
+  .footer-inner p,
+  .footer-links {
+    font-size: 0.95rem;
+  }
+
+  .bubble-1 { width: 320px; height: 320px; }
+  .bubble-2 { width: 400px; height: 400px; }
+  .bubble-3 { width: 260px; height: 260px; }
 }

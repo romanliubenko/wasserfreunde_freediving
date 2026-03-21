@@ -238,9 +238,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const allItems = Array.from(galleryMasonry.querySelectorAll('.masonry-item'));
 
     function getColumnCount() {
-      // When collapsed, column-count is unset (we use grid), so read from the
-      // expanded stylesheet value instead by temporarily checking breakpoints.
       const w = window.innerWidth;
+      if (w >= 2560) return 5;
+      if (w >= 1600) return 4;
       if (w >= 1024) return 3;
       if (w >= 640)  return 2;
       return 1;
@@ -248,7 +248,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function applyCollapsed() {
       const cols = getColumnCount();
-      // Set the CSS variable so the grid rule uses the right number of columns
       galleryMasonry.style.setProperty('--gallery-cols', cols);
       allItems.forEach((item, i) => {
         item.classList.toggle('gallery-hidden', i >= cols);
@@ -257,7 +256,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function applyExpanded() {
       allItems.forEach(item => item.classList.remove('gallery-hidden'));
-      // Remove the inline var so normal column-count masonry takes over
       galleryMasonry.style.removeProperty('--gallery-cols');
     }
 
