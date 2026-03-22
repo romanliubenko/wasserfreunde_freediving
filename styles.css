@@ -331,7 +331,7 @@ h3 {
   position: relative;
   min-height: calc(100vh - var(--nav-height));
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding: 3rem 0 3.5rem;
   overflow: hidden;
 }
@@ -486,6 +486,10 @@ h3 {
 }
 
 /* ─── SPACER after last section so it can scroll fully into view ─── */
+main {
+  padding-bottom: 60px;
+}
+
 main::after {
   content: '';
   display: block;
@@ -852,7 +856,7 @@ main::after {
 .gallery-toggle-fixed {
   display: none;
   position: sticky;
-  bottom: 1.5rem;
+  bottom: calc(60px + 2.5rem);
   left: 50%;
   transform: translateX(-50%);
   z-index: 50;
@@ -1037,9 +1041,15 @@ main::after {
 
 /* ─── FOOTER ─── */
 .site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
   border-top: 1px solid rgba(148, 163, 184, 0.18);
   background: radial-gradient(circle at 10% 0, rgba(56, 189, 248, 0.12), transparent 60%),
     rgba(2, 6, 23, 0.96);
+  backdrop-filter: blur(12px);
 }
 
 .footer-inner {
@@ -1097,7 +1107,7 @@ body.lang-en-active .lang-de {
 }
 
 /* ─── RESPONSIVE ─── */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .masonry-item:hover img {
     transform: none;
   }
@@ -1202,7 +1212,7 @@ body.lang-en-active .lang-de {
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1101px) {
   /* On desktop: show masonry + toggle, hide mobile scroll */
   .gallery-scroll-wrap {
     display: none;
@@ -1415,7 +1425,7 @@ body.lang-en-active .lang-de {
 @media (min-width: 2000px) {
   .hero {
     min-height: unset;
-    padding-bottom: 30vh;
+    padding-bottom: 20vh;
   }
 }
 
@@ -1573,6 +1583,10 @@ body.lang-en-active .lang-de {
   .gallery-toggle-fixed {
     font-size: 1rem;
     padding: 0.8rem 2rem;
+  }
+
+  .gallery-toggle-fixed {
+    bottom: calc(80px + 1.5rem);
   }
 
   .video-grid {
