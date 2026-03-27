@@ -1161,7 +1161,7 @@ body.lang-en-active .lang-de {
 
   .hero-content {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .hero-text {
