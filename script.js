@@ -88,7 +88,37 @@ document.addEventListener('DOMContentLoaded', () => {
     if (keys.includes(e.key)) programmaticTarget = null;
   });
 
+  /* ─── Landscape scroll: hide header on scroll down ─── */
+  const siteHeader = document.querySelector('.site-header');
+  let lastScrollY = 0;
+  let scrollDirection = null; // 'down' or 'up'
+
+  function isLandscapeViewport() {
+    return window.matchMedia('(max-width: 1100px) and (orientation: landscape)').matches;
+  }
+
   window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    // Detect scroll direction
+    if (currentScrollY > lastScrollY) {
+      scrollDirection = 'down';
+    } else if (currentScrollY < lastScrollY) {
+      scrollDirection = 'up';
+    }
+    lastScrollY = currentScrollY;
+
+    // Hide/show header based on scroll direction in landscape mode
+    if (siteHeader && isLandscapeViewport()) {
+      if (scrollDirection === 'down' && currentScrollY > navHeight) {
+        // Only hide if scrolled past the header height
+        siteHeader.classList.add('is-hidden');
+      } else {
+        siteHeader.classList.remove('is-hidden');
+      }
+    }
+
+    // Original nav highlight logic
     if (programmaticTarget) {
       setActiveLink(programmaticTarget);
     } else {
